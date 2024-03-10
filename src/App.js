@@ -1,8 +1,10 @@
 
 import './App.css';
 import Employee from './components/Employee';
+import { useState } from 'react';
 
 function App() {
+  const [role, setRole] = useState('Dev');
   console.log('We are about to list the employees');
   const showEmployees = true;
   return (
@@ -12,8 +14,12 @@ function App() {
           <h1>Hello World,</h1>
           {showEmployees ? 
           (<>
+          <input type="text" onChange={(e) => {
+            console.log(e.target.value);
+            setRole(e.target.value);
+          }} />
             <Employee name='Moses' role='Intern'/>
-            <Employee name='Prince' role='Accountant'/>
+            <Employee name='Prince' role={role}/>
             <Employee name='Abena' />
           </>)
           :
