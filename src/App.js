@@ -12,9 +12,9 @@ function App() {
           <h1>Hello World,</h1>
           {showEmployees ? 
           (<>
-            <Employee />
-            <Employee />
-            <Employee />
+            <Employee name='Moses' role='Intern'/>
+            <Employee name='Prince' role='Accountant'/>
+            <Employee name='Abena' />
           </>)
           :
           (<h2>You cannot view employee data</h2>)
